@@ -39,7 +39,7 @@ jobs:
           echo "CONFIG_USB_USBNET=y" >> out/.config
 
           make O=out olddefconfig
-          make -j$(nproc --all) O=out
+          make -j$(nproc --all) O=out KCFLAGS="-w" HOSTCFLAGS="-w"
 
       - name: Package with AnyKernel3
         run: |
