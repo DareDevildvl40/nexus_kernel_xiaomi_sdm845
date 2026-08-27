@@ -29,12 +29,10 @@ jobs:
           
           make O=out beryllium_defconfig
           
-          # Enable Wireless, Monitor Mode, Packet Injection & Atheros USB Cards
+          # Enable Wireless, Monitor Mode & Packet Injection safely
           echo "CONFIG_CFG80211=y" >> out/.config
           echo "CONFIG_CFG80211_INTERNAL_REGDB=y" >> out/.config
           echo "CONFIG_MAC80211=y" >> out/.config
-          echo "CONFIG_ATH_CARDS=y" >> out/.config
-          echo "CONFIG_ATH9K=y" >> out/.config
           echo "CONFIG_ATH9K_HTC=y" >> out/.config
           echo "CONFIG_USB_USBNET=y" >> out/.config
 
